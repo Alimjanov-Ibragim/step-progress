@@ -66,7 +66,11 @@ const StepProgress = observer(() => {
               onClick={() => handleClick(index)}
               data-testid={'step' + (index + 1)}
             >
-              <StepProgressWrapItemText>{step.title}</StepProgressWrapItemText>
+              <StepProgressWrapItemText
+                active={step.id === 1 ? true : step.active}
+              >
+                {step.title}
+              </StepProgressWrapItemText>
               <StepProgressWrapItem
                 active={step.id === 1 ? true : step.active}
               />
