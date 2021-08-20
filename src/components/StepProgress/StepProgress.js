@@ -10,7 +10,8 @@ import {
   StepProgressWrapItems,
   StepProgressWrapItem,
   StepProgressLog,
-  StepProgressWrapItemText
+  StepProgressWrapItemText,
+  StepProgressLabelHidden
 } from './StepProgressStyle';
 
 const StepProgress = observer(() => {
@@ -63,11 +64,15 @@ const StepProgress = observer(() => {
             <StepProgressWrapItems
               key={step.id}
               onClick={() => handleClick(index)}
+              data-testid={'step' + (index + 1)}
             >
               <StepProgressWrapItemText>{step.title}</StepProgressWrapItemText>
               <StepProgressWrapItem
                 active={step.id === 1 ? true : step.active}
               />
+              <StepProgressLabelHidden data-testid={'steps' + (index + 1)}>
+                active {activeStep}
+              </StepProgressLabelHidden>
             </StepProgressWrapItems>
           ))}
         </StepProgressWrapItemsWr>

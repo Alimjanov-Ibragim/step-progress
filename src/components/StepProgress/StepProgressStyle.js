@@ -63,3 +63,7 @@ export const StepProgressWrapItemText = styled.div`
   color: ${props => (!props.active ? '#dbdbdb' : '#5124da')};
   text-align: center;
 `;
+
+export const StepProgressLabelHidden = styled.div`
+  display: none;
+`;
